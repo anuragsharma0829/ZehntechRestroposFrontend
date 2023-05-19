@@ -1,0 +1,145 @@
+<!doctype html>
+<html ng-app="profile" lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /><script src="js/angularjs.js"></script>
+    <script src="js/angularjs.js"></script>
+    <script src="js/Script.js"></script>
+    <link rel="stylesheet" href="Style/style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body ng-controller="profilecontrol">
+   
+     <!-- Navigation bar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand"  href="#"><b>Restro-POS</b></a>
+      <form class="form-inline ml-5 my-2 pull-left ">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto mb-2 mb-lg-0 text-uppercase ">
+            <li class="nav-item active">
+              <a class="nav-link" href="profile.html"> <i class="fa-solid fa-user"></i> <span class="sr-only"></span></a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/settings.html"> <i class="fa-solid fa-gear"></i> <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active mr-5">
+              <a class="nav-link" href="Dashboard.html"> <i class="fa-solid fa-grip"></i>  <span class="sr-only"></span></a>
+            </li>
+          </ul>
+          <button class="mr-3" id="signout" onclick="signout()">Signout</button>
+        </div>
+
+    </nav>
+  <!-- End Navigation bar  -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <div class="card mt-5 ml-5" style="width: 20rem;">
+            <div>
+              <img class="card-img-top rounded" src="/image/restro/waiter copy 7.png" alt="Card image cap">
+            </div>
+            
+            <div class="card-body">
+              <h5 class="card-title"><b>{{username}}<span style="color: #ff0454;"> {{roles}}</span></b></h5>
+             <p>{{email}}</p>
+             <p><b>{{phone}}</b></p>
+              
+              <p>{{city}}</p>
+              <p>{{country}}</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-9">
+          <div class="card mt-5 mr-5">
+            <form class="mt-4 mr-5 ml-5 mb-5">
+              <div class="mb-3">
+                
+                <p>Please fill the information carefully</p>
+              </div>
+             
+              <div class="row">
+                <div class="col-sm-4">
+                  <label><b>First Name</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="">
+                </div>
+                <div class="col-sm-4">
+                  <label><b>Last Name</b></label>
+                  <input type="text"  id="table_numberf" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-sm-4 " >
+                  <label><b>Role</b></label>
+                  <input type="text"  id="sittingf" class="form-control" placeholder="">
+                </div>
+                
+                <div class="col-sm-4 " >
+                  <label><b>Email Address</b></label>
+                  <input type="text"  id="sittingf" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-sm-4">
+                  <label><b>Phone Number</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-sm-4">
+                  <label><b>Street Address</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-sm-4">
+                  <label><b>City/Town</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="Table  Arae">
+                </div>
+
+                <div class="col-sm-4">
+                  <label><b>State</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="Table  Arae">
+                </div>
+
+                <div class="col-sm-4">
+                  <label><b>Country</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="Table  Arae">
+                </div>
+
+                
+    
+                <div class="col-sm-6 mt-5 " >
+                  <!-- blank area  -->
+                </div>
+                <div class="col-sm-6 mt-5 " >
+                  <button type="button" class="addtabl" ng-click="sentdata('areaf','table_numberf','sittingf')">Update And Save </button>
+                </div>
+    
+                
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" ng-app="tables">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/angularjs.js"></script>
+  <script src="js/Script.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+
+<body ng-controller="tablectrl">
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><b>Restro-POS </b></a>
+    <form class="form-inline ml-5 my-2 pull-left ">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav  ml-auto mb-2 mb-lg-0 text-uppercase ">
+        <li class="nav-item active">
+          <a class="nav-link" href="profile.html"> <i class="fa-solid fa-user"></i> <span class="sr-only"></span></a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/settings.html"> <i class="fa-solid fa-gear"></i> <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active mr-5">
+          <a class="nav-link" href="Dashboard.html"> <i class="fa-solid fa-grip"></i> <span class="sr-only"></span></a>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+      <button class="mr-3" id="signout" onclick="signout()">Signout</button>
+    </div>
+
+  </nav>
+  <!-- End Navigation bar  -->
+
+  <div class="row">
+
+    <div class="col-3 mt-5 text-center">
+      <div class="nav flex-column nav-pills buttons" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true" ><b>All Tables</b></a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+          aria-controls="v-pills-profile" aria-selected="false"><b>+ ADD TABLE</b></a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+          aria-controls="v-pills-messages" aria-selected="false"><b>All Users</b></a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+          aria-controls="v-pills-settings" aria-selected="false"><span style="color: #ff0454">+</span><b>ADD USER</b>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-9 mt-5">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+          <div class="card mr-4">
+            <header class="mt-2 ml-2">
+              <h4>All Table Histories</h4>
+            </header>
+            <table class="table mt-4 text-center ">
+              <thead>
+                <tr>
+                  <th scope="col">Invoice #</th>
+                  <th scope="col">Table #</th>
+                  <th scope="col">Sale</th>
+                  <th scope="col">Date & Time</th>
+                  <th scope="col">Waiter Name</th>
+                </tr>
+              </thead>
+              <tbody id="history">
+                
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <!--  -->
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="card mr-4">
+
+            <form class="mt-4 mr-5 ml-5 mb-5">
+
+              <div class="mb-3">
+                <!-- alerts -->
+                <div id="alerttabl">
+
+                </div>
+
+
+                <h4>Add Table</h4>
+                <p>Please fill the user information</p>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- <label><b>AREA</b></label>
+                  <input type="text" id="areaf" class="form-control" placeholder="Table  Arae" required> -->
+
+                  <label><b>AREA</b></label>
+                  <select class="form-control" aria-label=".form-select-sm example" id="areaf" class="form-control"
+                    placeholder="Table Arae" required>
+                    <option>Terrace</option>
+                    <option>Garden</option>
+                    <option>Lawn</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label><b>TABLE NUMBER</b></label>
+                  <input type="text" id="table_numberf" class="form-control" placeholder="Table Number" required
+                    ng-model="number" ng-change="get_t_number()">
+                </div>
+
+                <div class="col-sm-6 mt-3">
+                  <label><b>OF SITTING</b></label>
+                  <input type="text" id="sittingf" class="form-control" placeholder="Of Sitting" required>
+                </div>
+
+                <div class="col-sm-6 mt-5">
+                  <button type="button" class="addtabl" ng-click="sentdata('areaf','table_numberf','sittingf')">+ ADD
+                    TABLE </button>
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <!--  -->
+
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <div class="card mr-4">
+            <header class="mt-2 ml-2">
+              <h4>All Users</h4>
+            </header>
+            <table class="table mt-4 text-center ">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">USER NAME</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">PHONE</th>
+                  <th scope="col">SHIFT</th>
+                  <th scope="col">ROLE</th>
+                  <th  scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="data">
+               
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--  -->
+
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <div class="card mr-4">
+            <form class="mt-4 mr-5 ml-5 mb-5" name="addusr" novalidate id="myform">
+              <!-- alert -->
+              <div id="success">
+
+              </div>
+              <!-- alert -->
+              <div class="mb-3">
+                <h4>Add User</h4>
+                <p>Please fill the user information</p>
+              </div>
+
+              <div hidden id="spinner"></div>
+             
+              <div class="row">
+                <div class="form-outline col-sm-6 mt-1">
+                  <label><b>USER NAME</b></label>
+                  <input type="text" id="username" class="form-control form-control-lg" placeholder="Fernando Deverick" ng-model="username" name="username" required>
+                  <!-- validations -->
+                  <span style="color: rgb(214, 22, 22);"  class="help-inline"
+                    ng-show="submitted && addusr.username.$error.required">*Username should not be blank
+                  </span>
+                </div>
+                <div class="col-sm-6 mt-1">
+                  <label><b>Role</b></label>
+                  <!-- <input type="text"  id="table_numberf" class="form-control" placeholder="Cashier"> -->
+                  <select id="batchSelect" class="form-control"></select>
+                    <!-- validations -->
+                </div>
+
+                <div class="col-sm-6 mt-1 ">
+                  <label><b>EMAIL</b></label>
+                  <input type="text" id="emaildd" class="form-control" placeholder="Email" ng-model="email" name="email" required>
+                  <!-- validations -->
+                  <span style="color: rgb(214, 22, 22);"  class="help-inline"
+                    ng-show="submitted && addusr.email.$error.required">*Email should not be blank
+                </span>
+                <br>
+               <span id="result"></span>
+                
+                </div>
+
+                <div class="col-sm-6 mt-1">
+                  <label><b>PHONE NUMBER</b></label>
+                  <input type="text" id="pnoid" class="form-control" placeholder="Phone Number" ng-model="phone" name="phone" required>
+                   <!-- validations -->
+                   <span style="color: rgb(214, 22, 22);"  class="help-inline"
+                   ng-show="submitted && addusr.phone.$error.required">*Phone Number should not be blank
+               </span>
+                </div>
+
+                <div class="col-sm-6 mt-2">
+                  <label><b>COUNTRY</b></label>
+                  <input type="text" id="countryid" class="form-control" placeholder="Country" ng-model="country" name="country" required>
+                   <!-- validations -->
+                   <span style="color: rgb(214, 22, 22);" class="help-inline"
+                   ng-show="submitted && addusr.country.$error.required">*Country should not be blank
+               </span>
+                </div>
+
+                <div class="col-sm-6 mt-2">
+                  <label><b>CITY</b></label>
+                  <input type="text" id="cityid" class="form-control" placeholder="City" ng-model="city" name="city" required>
+                   <!-- validations -->
+                   <span style="color: rgb(214, 22, 22);"  class="help-inline"
+                   ng-show="submitted && addusr.city.$error.required">*City should not be blank
+               </span>
+                </div>
+
+
+                <div class="col-sm-6 mt-2">
+                  <label><b>Shift</b></label>
+                  <input type="text" id="shiftid" class="form-control" placeholder="Shift" ng-model="shift" name="shift" required>
+                   <!-- validations -->
+                   <span style="color: rgb(214, 22, 22);"  class="help-inline"
+                   ng-show="submitted && addusr.shift.$error.required">*Shift should not be blank
+               </span>
+                </div>
+
+                <!-- <div class="col-sm-6 mt-5">
+                  <button type="button" class="addtabl"
+                    ng-click="saveuser('username','batchSelect','emaildd','pnoid','countryid','cityid','shiftid','pass');senntmail('emaildd'); submitted=true">+
+                    ADD
+                    USER </button>
+                </div> -->
+
+                <div class="col-sm-6 mt-5">
+                  <button type="button" class="addtabl"
+                    ng-click="saveuser('username','batchSelect','emaildd','pnoid','countryid','cityid','shiftid','pass'); submitted=true">+
+                    ADD
+                    USER </button>
+                </div>
+
+              
+
+
+                <div class="col-sm-6 mt-2">
+                  <input type="hidden" id="pass" class="form-control" placeholder="Shift">
+                </div>
+
+
+
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Update User Form  -->
+  <div  class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+           <!-- alerts -->
+           <div id="alert">
+
+           </div>
+          <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            
+
+              <input type="text" class="form-control" id="uid">
+          
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Email:</label>
+              <input type="text" class="form-control" id="uemail">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Phone:</label>
+              <input type="text" class="form-control" id="phonenum">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Shift:</label>
+              <input type="text" class="form-control" id="shift">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="updateuser('uemail','phonenum','shift')"> Confirm </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script>
+      
+
+
+    </script>
+</body>
+
+</html>

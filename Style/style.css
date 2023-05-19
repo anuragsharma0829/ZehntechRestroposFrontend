@@ -1,0 +1,386 @@
+.card{
+    background-image: url(/image/restro/bg.png);
+}
+.c1{
+    margin-left: 100px;
+}
+.c2{
+    margin-left: 100px;
+}
+.c3{
+    margin-left: 100px;
+  ;
+}
+.c4{
+    margin-left: 100px;
+}
+.card1{
+    height: 150px;
+    box-shadow: 20px;
+}
+.c3 .card-subtitle{
+    font-size: 30px
+}
+
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+     background-color: #fff;
+     border-bottom: 0px #fff; 
+     margin-top: 20px;
+
+}
+
+
+
+/* .card4 {
+    background-color: rgba(235, 14, 14, 0.2);
+} */
+#b1,#b2,#b3,#b4{
+    background: white;
+    border: none;
+    width: 150px;
+    margin-top: 10px;
+    font-family: "Hind Siliguri";
+    background-color: white;
+    text-emphasis-color: white;
+    visibility: visible;
+    /* font-size: 14px */
+
+          
+}
+#b2{
+    border-bottom: 1px solid gray;
+}
+
+    .buttons {
+        border: 1px solid #e9ecef;
+        /* height: inherit; */
+        height: 179px;
+        /* width: 238px; */
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    
+}
+
+.addtabl{
+     width: inherit;
+     height: 36px;
+     color: aliceblue;
+     background-color: #ff0454;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+a {
+    color: rgb(0 0 0 / 90%);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* profile */
+
+.card-img-top{
+   height: 60px;
+   width: 60px;
+   margin-top: 20px;
+   margin-left: 20px;
+ border-top-left-radius: 50% 50%; border-top-right-radius: 50% 50%; border-bottom-right-radius: 50% 50%; border-bottom-left-radius: 50% 50%; 
+   
+}
+
+/* add food button */
+#foodaddb{
+    color: aliceblue;
+    background-color: #ff0454;
+    width: inherit;
+    /* height: 36px; */
+}
+
+
+/* Congratulations */
+
+.Congratulations{
+    margin-left: 40px;
+}
+
+
+/* table details */
+.text{
+    margin-left: 10px;
+}
+
+
+.img{
+    margin-top: 14px;
+margin-left: 20px;
+}
+
+#tno{
+    margin-left: 10px;
+}
+.car{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+}
+
+.cardboprdr{
+    border-top-style: none;
+    border-left-style: none;
+    
+}
+.cardboprdr1{
+    border-top-style: none;
+    border-right-style: none;
+   
+}
+.cardboprdr2{
+    border-left-style: none;
+}
+.cardboprdr3{
+    border-right-style: none;
+}
+.cardboprdr4{
+    border-bottom-style: none;
+    border-left-style: none;
+}
+.cardboprdr5{
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+#errori{
+display: none;
+}
+
+
+/* SHow tables */
+#cardshowtbl{
+    height: 70px;
+    
+}
+
+#tableno{
+   margin-left: 85px;
+   margin-top:-58px
+   /* margin-bottom: 50px; */
+}
+
+.mtimg {
+    margin-left: 25px;
+    margin-top: 14px;
+}
+.imgwname {
+    margin-left:80px
+}
+.TABLEIDhide{
+    visibility: hidden;
+    display: none;
+}
+
+#img{
+  margin-left: 25px;
+  margin-top: 14px;
+}
+
+
+#guestinfo{
+    color: aliceblue;
+    background-color: #ff0454;
+    width: inherit;
+    /* height: 36px; */
+}
+
+#addfood{
+    margin-top: -30px;
+    /* display: contents; */
+}
+
+#signout{
+    border-color: rgb(168, 240, 177);
+    border-radius: 4px;
+
+}
+#tid{
+   visibility: hidden;
+}
+/* Show food */
+#foodid{
+     margin-left: 80px;
+     margin-top: -26px;
+}
+
+
+
+#spinner:not([hidden]) {
+  position: fixed;
+  top: 380px;
+  left: 0;
+  right: 0;
+  bottom: 180;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999999999999;
+  }
+  
+  #spinner::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ddcbcb;
+    border-top: 3px solid #04833d;
+    border-radius: 100%;
+    /* will-change: transform; */
+    animation: spin 1s infinite linear
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #geoTable{
+    background-color: white;
+    
+  }
+  
+  #kot{
+width: 200px;
+margin-left: 30px;
+  }
+
+  #productTotal{
+margin-left: 20px;
+    width: 200px;
+  }
+  
+  #fid{
+    display: none;
+  }
+
+  #loginbutton{
+    width: 120px;
+    height: 35px;
+    background-color: rgb(7, 130, 212);
+    border-radius: 5px;
+    color: #e9ecef;
+  }
+
+
+
+  #spinnerr:not([hidden]) {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 180;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999999999999;
+  }
+  
+  #spinnerr::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ddcbcb;
+    border-top: 3px solid green;
+    border-radius: 100%;
+    /* will-change: transform; */
+    animation: spin 1s infinite linear
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .auto{
+    align-items: center;
+    text-align: center;
+  }
+
+ 
+  #forgotpasssmail ,#hello{
+    width: 120px;
+    height: 45px;
+    background-color: rgb(7, 130, 212);
+    border-radius: 7px;
+    color: #e9ecef;
+  }
+
+  #emailid{
+    height: 40px;
+    margin-top: 1d0px;
+  }
+
+  #Invoice{
+    width: 200px;
+margin-left: 30px;
+  }
+
+#c2nd{
+  display: none;
+  
+}
+
+#ongoing{
+  color: #04833d;
+  margin-left: 9px;
+  font-size: 18px;
+}
+
+#payment{
+  text-align: center;
+  color: #e9ecef;
+  background-color: #ff0454;
+  border-radius: 4px;
+  width: 170px;
+  align-items: center;
+  justify-content: center;
+}
+
+#exampleRadios1{
+  margin-top: 16px;
+}
+#exampleRadios2{
+  margin-top: 32px;
+}
+#exampleRadios3{
+  margin-top: 26px;
+}
+#exampleRadios4{
+  margin-top: 8px;
+}
+#payment{
+  margin-left: 80px;
+}
+
+#invoicetotal{
+  color: #040608;
+}
+.serach{
+  width: 300px;
+  margin-left: auto;
+
+}
+
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+  border: 1px solid #4dd0e1;
+  box-shadow: 0 0 0 1px #4dd0e1;
+}
+
